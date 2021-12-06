@@ -7,9 +7,46 @@ function fetchQuestion() {
   .then(resp => resp.json())
   .then(data => {
     let question = data.results[0].question
-    let answer = data.results[0].correct_answer
+    answer = data.results[0].correct_answer
     let h2 = document.createElement('h2')
     h2.textContent = question
     document.querySelector('#current-question').append(h2)
   })
 }
+const trueModal = document.querySelector('#true-modal')
+const falseModal = document.querySelector("#false-modal")
+let userAnswer
+
+document.querySelector('button.true').addEventListener('click', (e) => {
+  console.log(e.target.innerText)
+  userAnswer = e.target.innerText
+  getResults(userAnswer)
+})
+
+document.querySelector('button.false').addEventListener('click', (e) => {
+  console.log(e.target.innerText)
+  userAnswer = e.target.innerText
+  getResults(userAnswer)
+})
+
+function getResults(userAnswer){
+  if (userAnswer == answer){
+    console.log("correct!")
+    trueModal.style.display = 'block'
+  }else if (userAnswer !== answer){
+    console.log("incorrect!")
+    falseModal.style.display = 'block'
+  }else{
+    console.log("answer error!")
+  }
+  document.querySelector('#current-question').innerHTML = ''
+  fetchQuestion()
+}
+
+document.getElementsByClassName("closeTrue")[0].addEventListener('click', () => {
+  trueModal.style.display = 'none'
+})
+
+document.getElementsByClassName("closeFalse")[0].addEventListener('click', () => {
+  falseModal.style.display = 'none'
+})
