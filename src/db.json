@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "question": "Peanuts are not nuts",
+      "correct_answer": "True",
+      "questionID": 1
+    },
+    {
+      "question": "Light Travels in a straight line.",
+      "correct_answer": "True",
+      "questionID": 2
+    },
+    {
+      "question": "Trees existed before sharks.",
+      "correct_answer": "False",
+      "questionID": 3
+    }
+  ]
+}

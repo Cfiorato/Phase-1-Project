@@ -9,28 +9,31 @@
       <h1>Trivial Retreat</h1>
       <h2>Trivia to Test Your General Knowledge</h2>
     </div>
+    <br/>
+    <div id='question-nav'>
+      <ul id='question-list'>
+        
+      </ul>
+      <button id= "random">Random Question</button>
+    </div>
     <div id='current-question'>
-
+      <h2>Select a Question to Begin</h2>
     </div>
     <div id="answer-select">
-      <button class="true">True</button>
-      <button class="false">False</button>
+      <button id="true" class="answer">True</button>
+      <button id="false" class="answer">False</button>
     </div>
-    <div id="true-modal" class="modal">
-      <div class="modal-content">
-        <span class="closeTrue">&times;</span>
-        <p>Correct!</p>
+    <div class='modalContainer' id="modalContainer">
+      <div id='modal' class="modal">
+        <p id='directions'>To try a different question, click on a different question on
+          the side of the page. To get a random question, click the generate 
+          question button. To add your own question, use the form on the side 
+          of the page.
+        </p>
+        <button id='close' class='close'>Close Me</button>
       </div>
-    <div id="false-modal" class="modal">
-      <div class="modal-content">
-        <span class="closeFalse">&times;</span>
-        <p>Incorrect!</p>
-      </div>  
     </div>
-    <div id='question-list'>
-
-    </div>
-    <div id="new-question">
+    <div id="new-question-form">
 
     </div>
     <script src="./src/index.js"></script>
