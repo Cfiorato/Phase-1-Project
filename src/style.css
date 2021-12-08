@@ -1,9 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #edeef6
+  background-color: #edeef6;
+  font-family: 'Poppins', sans-serif;
 }
 
 #title-bar {
@@ -13,7 +17,11 @@ body {
   text-align: center;
 }
 #answer-select{
+  position: absolute;
+  left: 33%;
+  top: 350px;
   text-align: center;
+  width: 500px;
 }
 
 button {
@@ -28,13 +36,19 @@ button {
 #question-nav {
   font-size: 20px;
   color: white;
-  list-style-type: none;
-  text-align: left;
+  text-align: center;
   float: left;
   background-color: rgb(67, 87, 202);
   border: 0;
   border-radius: 5px;
   padding: 8px 12px ;
+  width: 265px;
+}
+
+#question-nav #question-list {
+  padding: 20px;
+  list-style-type: none;
+  text-align: center;
 }
 
 #random{
@@ -47,7 +61,11 @@ button {
 }
 
 #current-question {
+  position: absolute;
   text-align: center;
+  top: 200px;
+  left: 33%;
+  width: 500px
 }
 
 .modalContainer {
@@ -86,4 +104,33 @@ button {
 .modal p {
   opacity: 0.7;
   font-size: 16px;
+}
+
+#new-question-form {
+  position: absolute;
+  right: 12px;
+  top: 210px;
+  float: right;
+  text-align: left;
+  color: #fff;
+  background-color: rgb(67, 87, 202);
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 12px ;
+  width: 265px;
+}
+
+#submit {
+  font-size: 15px;
+  background-color: rgb(173, 173, 173);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 8px 12px ;
+}
+
+select {
+  text-align: center;
+  margin-left: 35px;
+  width: 100px;
 }

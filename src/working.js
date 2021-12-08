@@ -37,3 +37,7 @@ function getResults(userAnswer){
     console.log("answer error!")
   }
 }
+
+document.querySelector('#new-question').addEventListener('submit', (e) => {
+  e.preventDefault()
+})

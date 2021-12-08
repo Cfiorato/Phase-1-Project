@@ -22,12 +22,11 @@ const fetchQuestions = () => {
 
 function loadQuestions(questionList) {
   questionList.forEach(obj => {
-    console.log(obj.question)
     let li = document.createElement('li')
     li.innerText = `Question ${obj.questionID}`
     li.id = obj.questionID
     li.addEventListener('click', (e) => {
-      defaultQuestions.forEach(question => {
+      questionList.forEach(question => {
         if (e.target.id == question.questionID){
           currentQuestionData.question = question.question
           currentQuestionData.answer = question.correct_answer
@@ -75,10 +74,8 @@ document.querySelector('#answer-select #false').addEventListener('click', (e) =>
 function getResult() {
   let response
   if (userAnswer === currentQuestionData.answer){
-    console.log('Correct!')
     response = 'Correct!'
   }else if (userAnswer !== currentQuestionData.answer){
-    console.log('Incorrect!')
     response = 'Incorrect!'
   }else{
     console.log('Error!')
@@ -101,4 +98,18 @@ document.querySelector('#close').addEventListener('click', () => {
   let h1 = document.querySelector('#feedback')
   h1.remove()
   document.querySelector('#modalContainer').classList.remove('show')
+})
+
+document.querySelector('#new-question').addEventListener('submit', (e) => {
+  e.preventDefault()
+  let newQuestion = e.target.querySelector('#question').value
+  let newAnswer = e.target.querySelector('#answer').value
+  let newId = defaultQuestions.length + 1
+  let newObj = [{
+    question: newQuestion,
+    correct_answer: newAnswer,
+    questionID: newId
+  }]
+  loadQuestions(newObj)
+  e.target.reset()
 })

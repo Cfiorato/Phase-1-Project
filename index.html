@@ -23,6 +23,29 @@
       <button id="true" class="answer">True</button>
       <button id="false" class="answer">False</button>
     </div>
+    <div id="new-question-form">
+      <form id="new-question"> 
+        <div>
+          <h3>Add Your Own Question Here</h3>
+        </div>
+        <div>
+          <label for ="question">Question:<label>
+          <input id="question" type="text" question="question"/>
+        </div>
+        <br>
+        <div>  
+          <label for="answer">Answer:</label>
+          <select name="answer" id="answer" form="new-question">
+            <option value="True">True</option>
+            <option value="False">False</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <button id='submit'>Add Question</button>
+        </div>
+      </form>
+    </div>
     <div class='modalContainer' id="modalContainer">
       <div id='modal' class="modal">
         <p id='directions'>To try a different question, click on a different question on
@@ -32,9 +55,6 @@
         </p>
         <button id='close' class='close'>Close Me</button>
       </div>
-    </div>
-    <div id="new-question-form">
-
     </div>
     <script src="./src/index.js"></script>
   </body>
