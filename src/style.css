@@ -22,6 +22,7 @@ body {
   top: 350px;
   text-align: center;
   width: 500px;
+  cursor: pointer;
 }
 
 button {
@@ -31,6 +32,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 8px 12px ;
+  cursor: pointer;
 }
 
 #question-nav {
@@ -49,6 +51,14 @@ button {
   padding: 20px;
   list-style-type: none;
   text-align: center;
+}
+
+#question-nav li{
+  cursor: pointer;
+}
+
+#question-nav button{
+  cursor: pointer;
 }
 
 #random{
@@ -133,4 +143,24 @@ select {
   text-align: center;
   margin-left: 35px;
   width: 100px;
+  cursor: pointer;
+}
+
+#correct-counter{
+  position: absolute;
+  left: 40%;
+  top: 450px;
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+  align-items: center;
+}
+
+#delete-button{
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 8px 12px ;
 }
