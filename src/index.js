@@ -123,6 +123,7 @@ document.querySelector('#new-question').addEventListener('submit', (e) => {
     questionID: newId
   }]
   loadQuestions(newObj)
+  persistQuestion(newObj)
   e.target.reset()
 })
 
@@ -132,5 +133,43 @@ const updateCounter = () => {
 }
 
 function removeItem(e){
+  processDelete(e)
   e.target.parentNode.remove()
+}
+
+function persistQuestion(array){
+  objToAdd = array[0];
+  console.log(JSON.stringify(objToAdd))
+  fetch("http://localhost:3000/results", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(objToAdd)
+  })
+  .then(resp => resp.json())
+  .then(data => console.log('SUCCESS ' + data))
+  .catch((error) => console.log('ERROR ' + error))
+}
+let jsonId
+function processDelete(e){
+  idToRemove = e.target.parentNode.id
+  findJSONId(idToRemove)
+  fetch(`http://localhost:3000/results/${jsonId}`, {
+    method: 'DELETE', 
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(resp => resp.json())
+  .then(data => console.log(`SUCCESS: ${data}`))
+  .catch((error) => console.log(`ERROR: ${error}`))
+}
+
+function findJSONId(targetID){
+  defaultQuestions.forEach(question => {
+    if (question.questionID == targetID){
+      jsonId = question.id
+    }
+  })
 }
